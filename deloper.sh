@@ -1,3 +1,4 @@
+#!/bin/sh
 echo 'Hi'
 echo 'Sit back and let me do all the hard parts'
 echo 'You lazy cunt'
