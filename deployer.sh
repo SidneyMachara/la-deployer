@@ -1,4 +1,5 @@
-
+#!/bin/bash
+# set timeout 10
 echo_red(){
     echo -e "\e[1;31m$1\e[0m"
 }
@@ -17,31 +18,31 @@ echo_purple(){
 echo_white(){
     echo -e "\033[0;37m$1\e[0m"
 }
+#
+# echo_purple 'Hi'
+# echo_purple 'Sit back and let me do all the hard parts'
+# echo_purple 'You lazy cunt'
+# echo_white '--------------------------'
+#
+# echo
+# echo_purple 'Updating server with (sudo apt-get update)'
+# sudo apt-get update
+#
+# echo
+# echo_purple 'installing Nginx'
+# sudo apt-get -y install nginx
+#
+# echo
+# echo_purple  'installing mysql-server'
+# sudo apt-get -y install mysql-server
 
-echo_purple 'Hi'
-echo_purple 'Sit back and let me do all the hard parts'
-echo_purple 'You lazy cunt'
-echo_white '--------------------------'
-
 echo
-echo_purple 'Updating server with (sudo apt-get update)'
-sudo apt-get update
-
+echo_purple 'sudo mysql_secure_installation'
 echo
-echo_purple 'installing Nginx'
-sudo apt-get -y install nginx
-
-echo
-echo_purple  'installing mysql-server'
-sudo apt-get -y install mysql-server
-exit
-echo
-echo 'sudo mysql_secure_installation'
-echo
-echo 'dont bother changing password, press (anything but (y) and obisosly not the power button)'
-echo 'press (y) for the other prompts '
+echo_purple 'dont bother changing password, press anything but (y) and obisosly not the power button (-_-) '
+echo_purple 'press (y) for the other prompts '
 sudo mysql_secure_installation
-
+exit
 echo
 echo 'install php-7.2 && most commonly used modules'
 sudo apt-add-repository ppa:ondrej/php
