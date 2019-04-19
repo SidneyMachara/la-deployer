@@ -35,24 +35,26 @@ echo_white(){
 # echo
 # echo_purple  'installing mysql-server'
 # sudo apt-get -y install mysql-server
+#
+# echo
+# echo_purple 'sudo mysql_secure_installation'
+# echo_white 'What we will do:'
+# echo_white 'Remove anonymous users (yes)'
+# echo_white 'Disallow root login remotely (yes)'
+# echo_white 'Remove test database (yes)'
+# echo_white 'Reload privilege tables now (yes)'
+# echo_purple '-------------------------'
+# echo -e "n \ny \ny \ny \ny" | mysql_secure_installation
+
 
 echo
-echo_purple 'sudo mysql_secure_installation'
-echo_white 'Remove anonymous users (yes)'
-echo_white 'Disallow root login remotely (yes)'
-echo_white 'Remove test database (yes)'
-echo_white 'Reload privilege tables now (yes)'
-echo_purple '-------------------------'
-echo -e "n \ny \ny \ny \ny" | mysql_secure_installation
-
-exit
-echo
-echo 'install php-7.2 && most commonly used modules'
+echo_purple 'install php-7.2 && most commonly used modules'
 sudo apt-add-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml composer unzip
 #sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring php7.2-mcrypt php7.2-zip php7.2-fpm composer unzip
 
+exit
 
 echo
 echo 'copying updated php.ini file (/la-deployer/php.ini /etc/php/7.2/fpm/php.ini) change made = (cgi.fix_pathinfo=0)'
