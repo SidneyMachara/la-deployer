@@ -59,7 +59,7 @@ echo_white(){
 echo
 echo_purple 'copying updated php.ini file (/la-deployer/php.ini /etc/php/7.2/fpm/php.ini) change made = (cgi.fix_pathinfo=0)'
 sudo rm /etc/php/7.2/fpm/php.ini
-cp /la-deployer/php.ini /etc/php/7.2/fpm/php.ini
+cp php.ini /etc/php/7.2/fpm/php.ini
 
 echo
 echo_purple 'restart php7.2-fpm'
