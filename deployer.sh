@@ -148,82 +148,81 @@ echo_white "************************"
 
 echo
 echo
+
 set timeout 10
 
 echo
 while true; do
 
-read -p "HAVE YOU COMPLETE THE INSTUCTIONS ABOVE?" yn
+  read -p "\033[0;37m HAVE YOU COMPLETE THE INSTUCTIONS ABOVE? (y|Y for yes) \e[0m" yn
 
-case $yn in
+  case $yn in
   [Yy]* )
-#after pushing local app to server
-echo
-
-cd /var/www/laravel/
-composer install --no-dev
-
-echo
-echo 'give nginx permissionsover laravel directoy'
-sudo chown -R :www-data /var/www/laravel
-sudo chmod -R 775 /var/www/laravel/storage
-
-sudo chmod -R 775 /var/www/laravel/bootstrap/cache
-
-echo
-echo 'YOUR TURN -->Database Setup'
-echo 'YOU HAVE TO ATLEAST DO SOMETHING'
-echo 'Relax ill help you'
-echo
-echo 'type --> mysql -u root -p" yourpassword"'
-echo 'type --> CREATE DATABASE your_db_name;'
-echo 'type --> exit'
+      #after pushing local app to server
 
 
-#will automate this part after i figure out how to wait for user to finish to part
-echo
-echo 'creating env .file'
-echo' type --> cd /var/www/laravel/'
-echo 'type --> cp .env.example .env'
+      cd /var/www/laravel
+      echo_purple 'composer install --no-dev'
+      composer install --no-dev
 
-echo
-echo 'type --> sudo nano /var/www/laravel/.env'
-echo 'set up as you wish '
-echo 'TIP 1 -> APP_DEBUG=false'
-echo 'TIP 2 -> database name , password, user'
-echo 'TIP 3 -> dont forget to put password in quotes ->"password"'
-echo 'PRESS'
-echo 'ctrl + x'
-echo 'y'
-echo 'enter'
+      echo
+      echo_purple 'creating env .file'
+      cp /var/www/laravel/.env.example /var/www/laravel/.env
 
-echo 'generating app key'
-echo 'type --> php artisan key:generate'
+      echo_purple 'generating app key'
+      php artisan key:generate )
 
-echo
-echo 'type --> cd /var/www/laravel/config/app.php'
-echo ' change --> "url" => "http://example.com" to "url" => "http://your_server_ip"'
-echo 'PRESS'
-echo 'ctrl + x'
-echo 'y'
-echo 'enter'
+      echo
+      echo_purple 'give nginx permissionsover laravel directoy'
+      sudo chown -R :www-data /var/www/laravel
+      sudo chmod -R 775 /var/www/laravel/storage
 
-echo
-echo 'running artisan config:cache'
-echo 'type --> php artisan config:cache'
+      sudo chmod -R 775 /var/www/laravel/bootstrap/cache
 
-echo
-echo 'running artisan migrate'
-echo 'type -->php artisan migrate'
+      echo
+      echo_purple 'YOUR TURN -->Database Setup'
+      echo_purple 'YOU HAVE TO ATLEAST DO SOMETHING'
+      echo_purple 'Relax ill help you'
+      echo
+      echo_purple 'type --> mysql -u root -p" yourpassword"'
+      echo_purple 'type --> CREATE DATABASE your_db_name;'
+      echo_purple 'type --> exit'
 
 
-echo 'ALL DONE'
+      #will automate this part after i figure out how to (:P)
 
-break;;
+      echo
+      echo_purple 'type --> sudo nano /var/www/laravel/.env'
+      echo_purple 'set up as you wish '
+      echo_purple 'TIP 1 -> APP_DEBUG=false'
+      echo_purple 'TIP 2 -> change --> database (name , password, user)'
+      echo_purple 'TIP 3 -> dont forget to put password in quotes ->"password"'
+      echo_purple 'SAVE'
 
-[Nn]* ) exit;;
 
-  * ) echo "Please answer yes or no.";;
 
-esac
+
+      echo
+      echo_purple 'type --> cd /var/www/laravel/config/app.php'
+      echo_purple ' change --> "url" => "http://example.com" to "url" => "http://your_server_ip"'
+      echo_purple 'SAVE'
+
+      echo
+      echo_purple 'running artisan config:cache'
+      echo_purple 'type --> php artisan config:cache'
+
+      echo
+      echo_purple 'running artisan migrate'
+      echo_purple 'type -->php artisan migrate'
+
+
+      echo_purple 'ALL DONE'
+
+      break;;
+
+# [Nn]* ) exit;;
+
+  * ) echo echo_red "PLEASE COMPLETE AND ANSWER --> HAVE YOU COMPLETE THE INSTUCTIONS ABOVE? (y|Y for yes)" ;;
+
+  esac
 done
