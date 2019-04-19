@@ -170,7 +170,7 @@ while true; do
       cp /var/www/laravel/.env.example /var/www/laravel/.env
 
       echo_purple 'generating app key'
-      php artisan key:generate )
+      php artisan key:generate 
 
       echo
       echo_purple 'give nginx permissionsover laravel directoy'
