@@ -49,9 +49,9 @@ echo_white(){
 
 echo
 echo_purple 'install php-7.2 && most commonly used modules'
-sudo apt-add-repository ppa:ondrej/php
+sudo apt-add-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml composer unzip
+sudo apt-get -y install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml composer unzip
 #sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring php7.2-mcrypt php7.2-zip php7.2-fpm composer unzip
 
 exit
