@@ -14,24 +14,27 @@ echo_blue(){
 echo_purple(){
     echo -e "\033[1;95m$1\e[0m"
 }
+echo_white(){
+    echo -e "\033[0;37m$1\e[0m"
+}
 
-echo_red 'Hi'
+echo_purple 'Hi'
 echo_purple 'Sit back and let me do all the hard parts'
 echo_purple 'You lazy cunt'
-echo_red '--------------------------'
+echo_white '--------------------------'
 
 echo
 echo_purple 'Updating server with (sudo apt-get update)'
 sudo apt-get update
-exit
+
 echo
-echo 'installing Nginx'
+echo_purple 'installing Nginx'
 sudo apt-get install nginx
 
 echo
-echo 'installing mysql-server'
+echo_purple  'installing mysql-server'
 sudo apt-get install mysql-server
-
+exit
 echo
 echo 'sudo mysql_secure_installation'
 echo
