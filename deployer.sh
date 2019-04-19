@@ -50,7 +50,8 @@ echo_white 'Disallow root login remotely (yes)'
 echo_white 'Remove test database (yes)'
 echo_white 'Reload privilege tables now (yes)'
 echo_purple '-------------------------'
-echo -e "n \ny \ny \ny \ny" | mysql_secure_installation
+# echo -e "n \ny \ny \ny \ny" | mysql_secure_installation
+sudo mysql_secure_installation
 
 
 echo
