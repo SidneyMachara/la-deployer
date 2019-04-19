@@ -33,7 +33,7 @@ sudo apt-get -y install nginx
 
 echo
 echo_purple  'installing mysql-server'
-sudo apt-get install mysql-server
+sudo apt-get -y install mysql-server
 exit
 echo
 echo 'sudo mysql_secure_installation'
