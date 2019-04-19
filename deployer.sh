@@ -90,75 +90,76 @@ echo_white(){
 # echo_purple 'Creating A Folder for Laravel in (/var/www/laravel)'
 # sudo mkdir -p /var/www/laravel
 #
-
-echo
-echo_purple 'NOW WE CREATE SWAPFILE'
-
-echo
-echo_purple 'create 1gb swap file '
-sudo fallocate -l 1G /swapfile
-
-echo
-echo_purple 'tell Ubuntu to format it as swap space'
-sudo mkswap /swapfile
-
-echo
-echo_purple 'now we start using it'
-sudo swapon /swapfile
-
-
-echo
-echo_purple 'INSTALLING COMPOSER'
-cd ~
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-
-echo
-echo_purple 'creating git repository in (/var/repo/site.git)'
-cd /var
-mkdir repo && cd repo
-
-mkdir site.git && cd site.git
-git init --bare
-
-echo
-echo_purple 'Setting Up Git Hooks'
-cd hooks
-
-echo
-echo_purple 'copy post-receive file to /var/repo/site.git/hooks/'
-cp ~/la-deployer/post-receive /var/repo/site.git/hooks/
-
-echo
-echo_purple 'give post-recive file permissions to excute order to copy files over from git to sever'
-sudo chmod +x post-receive
-
-echo
-exit
-echo "************************"
-echo "************************"
-echo
-echo 'go to your application and add the remote below,, replace 0.0.0.0 with your server ip'
-echo 'git remote add production ssh://root@0.0.0.0.0/var/repo/site.git'
-echo 'AND FOR THE MAGICAL PART'
-echo 'git push production master'
-echo
-echo "************************"
-echo "************************"
-
-echo
-echo
-read -p "DID YOU FOLLOW THE STEPS ABOVE ???" -n 1 -r
-echo
-
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
+#
+# echo
+# echo_purple 'NOW WE CREATE SWAPFILE'
+#
+# echo
+# echo_purple 'create 1gb swap file '
+# sudo fallocate -l 1G /swapfile
+#
+# echo
+# echo_purple 'tell Ubuntu to format it as swap space'
+# sudo mkswap /swapfile
+#
+# echo
+# echo_purple 'now we start using it'
+# sudo swapon /swapfile
+#
+#
+# echo
+# echo_purple 'INSTALLING COMPOSER'
+# cd ~
+# curl -sS https://getcomposer.org/installer | php
+# sudo mv composer.phar /usr/local/bin/composer
+#
+# echo
+# echo_purple 'creating git repository in (/var/repo/site.git)'
+# cd /var
+# mkdir repo && cd repo
+#
+# mkdir site.git && cd site.git
+# git init --bare
+#
+# echo
+# echo_purple 'Setting Up Git Hooks'
+# cd hooks
+#
+# echo
+# echo_purple 'copy post-receive file to /var/repo/site.git/hooks/'
+# cp ~/la-deployer/post-receive /var/repo/site.git/hooks/
+#
+# echo
+# echo_purple 'give post-recive file permissions to excute order to copy files over from git to sever'
+# sudo chmod +x /var/repo/site.git/hooks/post-receive
 
 echo
 
-#after pushing to server
+echo_white "************************"
+echo_white "************************"
 echo
-echo 'ALL DONE HERE (you can exit using (exit) command)'
+echo_yellow 'go to your application and add the remote below,, replace 0.0.0.0 with your server ip'
+echo_yellow 'git remote add production ssh://root@0.0.0.0.0/var/repo/site.git'
+echo_yellow 'AND FOR THE MAGICAL PART'
+echo_purple 'git push production master'
+echo
+echo_white "************************"
+echo_white "************************"
+
+echo
+echo
+set timeout 10
+
+echo
+while true; do
+
+read -p "HAVE YOU COMPLETE THE INSTUCTIONS ABOVE?" yn
+
+case $yn in
+  [Yy]* )
+#after pushing local app to server
+echo
+
 cd /var/www/laravel/
 composer install --no-dev
 
@@ -190,7 +191,7 @@ echo 'type --> sudo nano /var/www/laravel/.env'
 echo 'set up as you wish '
 echo 'TIP 1 -> APP_DEBUG=false'
 echo 'TIP 2 -> database name , password, user'
-echo 'TIP 3 -> dont forget to put passwor in quotes ->"password"'
+echo 'TIP 3 -> dont forget to put password in quotes ->"password"'
 echo 'PRESS'
 echo 'ctrl + x'
 echo 'y'
@@ -218,4 +219,11 @@ echo 'type -->php artisan migrate'
 
 echo 'ALL DONE'
 
-fi
+break;;
+
+[Nn]* ) exit;;
+
+  * ) echo "Please answer yes or no.";;
+
+esac
+done
