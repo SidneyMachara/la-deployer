@@ -38,10 +38,13 @@ echo_white(){
 
 echo
 echo_purple 'sudo mysql_secure_installation'
-echo
-echo_purple 'dont bother changing password, press anything but (y) and obisosly not the power button (-_-) '
-echo_purple 'press (y) for the other prompts '
-sudo mysql_secure_installation
+echo_white 'Remove anonymous users (yes)'
+echo_white 'Disallow root login remotely (yes)'
+echo_white 'Remove test database (yes)'
+echo_white 'Reload privilege tables now (yes)'
+echo_purple '-------------------------'
+echo -e "n \ny \ny \ny \ny" | mysql_secure_installation
+
 exit
 echo
 echo 'install php-7.2 && most commonly used modules'
