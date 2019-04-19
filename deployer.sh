@@ -29,7 +29,7 @@ sudo apt-get update
 
 echo
 echo_purple 'installing Nginx'
-sudo apt-get install nginx
+sudo apt-get -y install nginx
 
 echo
 echo_purple  'installing mysql-server'
