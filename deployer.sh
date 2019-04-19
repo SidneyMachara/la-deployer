@@ -67,56 +67,54 @@ echo_white(){
 #
 #
 # #if i can find sudo nano /etc/nginx/sites-available/default -->re install nginx
-echo
-echo_purple 'copying updated /etc/nginx/sites-available/default'
-sudo rm /etc/nginx/sites-available/default
-cp default /etc/nginx/sites-available/default
+# echo
+# echo_purple 'copying updated /etc/nginx/sites-available/default'
+# sudo rm /etc/nginx/sites-available/default
+# cp default /etc/nginx/sites-available/default
+#
+# echo
+# echo_purple 'making sure it is error free'
+# sudo nginx -t
+#
+#
+#
+# echo
+# echo_purple 'now to let it take effect you can restart Nginx'
+# sudo systemctl reload nginx
+#
+# sudo service nginx restart
+#
+#
+#
+# echo
+# echo_purple 'Creating A Folder for Laravel in (/var/www/laravel)'
+# sudo mkdir -p /var/www/laravel
+#
 
 echo
-echo 'making sure it is error free'
-sudo nginx -t
-
-
+echo_purple 'NOW WE CREATE SWAPFILE'
 
 echo
-echo_purple 'now to let it take effect you can restart Nginx'
-sudo systemctl reload nginx
-
-echo
-echo 'restart nginx'
-sudo service nginx restart
-
-
-
-echo
-echo_purple 'Creating A Folder for Laravel'
-sudo mkdir -p /var/www/laravel
-
-exit
-echo
-echo 'NOW WE CREATE SWAPFILE'
-
-echo
-echo 'create 1gb swap file '
+echo_purple 'create 1gb swap file '
 sudo fallocate -l 1G /swapfile
 
 echo
-echo 'tell Ubuntu to format it as swap space'
+echo_purple 'tell Ubuntu to format it as swap space'
 sudo mkswap /swapfile
 
 echo
-echo 'now we start using it'
+echo_purple 'now we start using it'
 sudo swapon /swapfile
 
 
 echo
-echo 'INSTALLING COMPOSER'
+echo_purple 'INSTALLING COMPOSER'
 cd ~
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
 echo
-echo 'creating git repository in (/var/repo/site.git)'
+echo_purple 'creating git repository in (/var/repo/site.git)'
 cd /var
 mkdir repo && cd repo
 
@@ -124,19 +122,19 @@ mkdir site.git && cd site.git
 git init --bare
 
 echo
-echo 'Setting Up Git Hooks'
+echo_purple 'Setting Up Git Hooks'
 cd hooks
 
 echo
-echo 'copy post-receive file to /var/repo/site.git/hooks/'
-cp /la-deployer/post-receive /var/repo/site.git/hooks/
+echo_purple 'copy post-receive file to /var/repo/site.git/hooks/'
+cp post-receive /var/repo/site.git/hooks/
 
 echo
-echo 'give post-recive file permissions to excute order to copy files over from git to sever'
+echo_purple 'give post-recive file permissions to excute order to copy files over from git to sever'
 sudo chmod +x post-receive
 
 echo
-
+exit
 echo "************************"
 echo "************************"
 echo
