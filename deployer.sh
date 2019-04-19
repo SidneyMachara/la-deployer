@@ -127,7 +127,7 @@ cd hooks
 
 echo
 echo_purple 'copy post-receive file to /var/repo/site.git/hooks/'
-cp post-receive /var/repo/site.git/hooks/
+cp ~/la-deployer/post-receive /var/repo/site.git/hooks/
 
 echo
 echo_purple 'give post-recive file permissions to excute order to copy files over from git to sever'
