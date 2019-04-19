@@ -11,20 +11,19 @@ echo_yellow(){
 echo_blue(){
     echo -e "\e[1;34m$1\e[0m"
 }
+echo_purple(){
+    echo -e "\033[1;95m$1\e[0m"
+}
 
 echo_red 'Hi'
-echo_yellow 'Sit back and let me do all the hard parts'
-echo_blue 'You lazy cunt'
+echo_purple 'Sit back and let me do all the hard parts'
+echo_purple 'You lazy cunt'
 echo_red '--------------------------'
 
-exit
-echo "boo"
-return
-echo "boo again"
 echo
-echo 'Updating server with (sudo apt-get update)'
+echo_purple 'Updating server with (sudo apt-get update)'
 sudo apt-get update
-
+exit
 echo
 echo 'installing Nginx'
 sudo apt-get install nginx
