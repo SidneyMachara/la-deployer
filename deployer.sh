@@ -1,9 +1,26 @@
-echo 'Hi'
-echo 'Sit back and let me do all the hard parts'
-echo 'You lazy cunt'
-echo '--------------------------'
 
+echo_red(){
+    echo -e "\e[1;31m$1\e[0m"
+}
+echo_green(){
+    echo -e "\e[1;32m$1\e[0m"
+}
+echo_yellow(){
+    echo -e "\e[1;33m$1\e[0m"
+}
+echo_blue(){
+    echo -e "\e[1;34m$1\e[0m"
+}
 
+echo_red 'Hi'
+echo_yellow 'Sit back and let me do all the hard parts'
+echo_blue 'You lazy cunt'
+echo_red '--------------------------'
+
+exit
+echo "boo"
+return
+echo "boo again"
 echo
 echo 'Updating server with (sudo apt-get update)'
 sudo apt-get update
@@ -27,7 +44,7 @@ echo
 echo 'install php-7.2 && most commonly used modules'
 sudo apt-add-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm composer unzip
+sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml composer unzip
 #sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring php7.2-mcrypt php7.2-zip php7.2-fpm composer unzip
 
 
@@ -105,11 +122,16 @@ sudo chmod +x post-receive
 
 echo
 
+echo "************************"
+echo "************************"
 echo
 echo 'go to your application and add the remote below,, replace 0.0.0.0 with your server ip'
 echo 'git remote add production ssh://root@0.0.0.0.0/var/repo/site.git'
 echo 'AND FOR THE MAGICAL PART'
 echo 'git push production master'
+echo
+echo "************************"
+echo "************************"
 
 echo
 echo
