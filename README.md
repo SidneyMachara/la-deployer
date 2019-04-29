@@ -40,7 +40,7 @@ cd la-deployer
 ```
 sudo nano default
 ```
-<p style='color:red'>in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address </p>
+#### in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address 
 
 
 
