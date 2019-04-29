@@ -16,6 +16,7 @@ Best for beginners looking to depoly as fast as possible without doing much, Or 
 
 ## Note
 la-deployer does the following:
+
 * sets up LEMP stack  ( php 7.2 )
 * guides you on how to setup your laravel project ( uses githook to reduce downtime )
 
@@ -25,33 +26,33 @@ la-deployer does the following:
 
 1. ssh into your server 
   
-1. clone the repo into your server
+2. clone the repo into your server
 ```
 git clone https://github.com/SidneyMachara/la-deployer.git
 ```
 
-1. navigate into la-deployer
+3. navigate into la-deployer
 ```
 cd la-deployer
 ```
 
-1. update file (default with your server ip
+4. update file (default with your server ip
 ```
 sudo nano default
 ```
 in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address 
 
-1. give the script permision to do its job
+5. give the script permision to do its job
 ```
 sudo chmod +x deployer.sh
 ```
 
-1. run it and watch the magic happen
+6. run it and watch the magic happen
 ```
 ./deployer.sh
 ```
 
-1. sit back and look out for easy guided steps on the screan
+7. sit back and look out for easy guided steps on the screan
 
 
 ## 👨 Developed By
