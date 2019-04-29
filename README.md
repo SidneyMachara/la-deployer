@@ -40,7 +40,7 @@ cd la-deployer
 ```
 sudo nano default
 ```
-in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address 
+###### in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address 
 
 
 5. give the script permision to do its job
