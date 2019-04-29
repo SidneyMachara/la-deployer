@@ -22,7 +22,7 @@ la-deployer does the following:
 
 
 ## How to Use 
-( assupmtion is you have a VPS, Eg on digital ocean )
+
 
 1. ssh into your server 
   
@@ -36,11 +36,12 @@ git clone https://github.com/SidneyMachara/la-deployer.git
 cd la-deployer
 ```
 
-4. update file (default with your server ip
+4. update file (default ) with your server ip
 ```
 sudo nano default
 ```
 in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address 
+
 
 5. give the script permision to do its job
 ```
@@ -58,7 +59,7 @@ sudo chmod +x deployer.sh
 ## 👨 Developed By
 
 ```
-David Sidney Machara
+Sidney David  Machara
 ```
 
 
