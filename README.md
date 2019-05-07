@@ -28,7 +28,7 @@ la-deployer does the following:
   
 2. clone the repo into your server
 ```
-git clone https://github.com/SidneyMachara/la-deployer.git
+git clone https://github.com/SidneyMachara/cj-la-deployer.git
 ```
 
 3. navigate into la-deployer
