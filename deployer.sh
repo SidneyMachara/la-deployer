@@ -58,8 +58,8 @@ echo
 echo_purple 'install php-7.2 && most commonly used modules'
 sudo apt-add-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get -y install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml composer unzip
-#sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring php7.2-mcrypt php7.2-zip php7.2-fpm composer unzip
+sudo apt-get -y install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml  unzip
+#sudo apt-get install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring php7.2-mcrypt php7.2-zip php7.2-fpm  unzip
 
 
 
@@ -73,7 +73,7 @@ echo_purple 'restart php7.2-fpm'
 sudo systemctl restart php7.2-fpm
 
 
-#if i can find sudo nano /etc/nginx/sites-available/default -->re install nginx
+#if i can't find sudo nano /etc/nginx/sites-available/default -->re install nginx
 echo
 echo_purple 'copying updated /etc/nginx/sites-available/default'
 sudo rm /etc/nginx/sites-available/default
@@ -161,7 +161,7 @@ set timeout 10
 echo
 while true; do
 
-  read -p "HAVE YOU COMPLETE THE INSTUCTIONS ABOVE? (y|Y for yes)" yn
+  read -p "HAVE YOU COMPLETE THE INSTUCTIONS ABOVE? (y|Y for yes) : " yn
 
   case $yn in
   [Yy]* )
@@ -248,7 +248,7 @@ while true; do
 
 # [Nn]* ) exit;;
 
-  * ) echo_red "PLEASE PERFORM THE INSTRUCTIONS ABPVE FIRST" ;;
+  * ) echo_red "PLEASE PERFORM THE INSTRUCTIONS ABOVE FIRST !!!!!" ;;
 
   esac
 done
