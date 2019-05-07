@@ -33,7 +33,7 @@ git clone https://github.com/SidneyMachara/cj-la-deployer.git
 
 3. navigate into la-deployer
 ```
-cd la-deployer
+cd cj-la-deployer
 ```
 
 4. update file (default ) with your server ip
