@@ -1,37 +1,17 @@
 #!/bin/bash
 # set timeout 10
-echo_red(){
-    echo -e "\e[1;31m$1\e[0m"
-}
-echo_green(){
-    echo -e "\e[1;32m$1\e[0m"
-}
-echo_yellow(){
-    echo -e "\e[1;33m$1\e[0m"
-}
-echo_blue(){
-    echo -e "\e[1;34m$1\e[0m"
-}
-echo_cyan(){
-    echo -e "\033[0;36m$1\e[0m"
-}
-echo_purple(){
-    echo -e "\033[1;95m$1\e[0m"
-}
-echo_white(){
-    echo -e "\033[0;37m$1\e[0m"
-}
+
+./includes/format
+
+
+
 
 
 #Men at Work
+intro
 
-echo_purple 'Hi'
-echo_purple 'Sit back and let me do all the hard parts'
-echo_purple 'You lazy cunt'
-echo_white '--------------------------'
 
-echo
-echo_purple 'Updating server with (sudo apt-get update)'
+inform_human 'Updating server with (sudo apt-get update)'
 sudo apt-get update
 
 echo
@@ -52,14 +32,16 @@ echo_white 'Reload privilege tables now (yes)'
 echo_purple '-------------------------'
 # echo -e "n \ny \ny \ny \ny" | mysql_secure_installation
 sudo mysql_secure_installation
- 
+
 
 echo
 echo_purple 'install php-7.2 && most commonly used modules'
 sudo apt-add-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get -y --allow-unauthenticated install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring php7.1-mcrypt  php7.2-zip php7.2-fpm php7.2-xml  zip unzip
-#php7.2-mcrypt <-- ()
+sudo apt-get -y --allow-unauthenticated install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml php7.2-curl curl zip unzip
+#php7.2-mcrypt <-- deprecated ??
+sudo apt-get -y php7.1-mcrypt
+
 
 
 
@@ -252,3 +234,5 @@ while true; do
 
   esac
 done
+
+exit;
