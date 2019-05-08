@@ -169,7 +169,7 @@ while true; do
 
       #will automate this part after i figure out how to (:P)
 
-      white_divider
+
       order_human 'type --> sudo nano /var/www/laravel/.env'
       inform_human 'set up as you wish '
       order_human  'TIP 1 -> APP_DEBUG=false'
@@ -181,7 +181,7 @@ while true; do
 
 
       order_human 'type --> nano /var/www/laravel/config/app.php'
-      order_human ' change --> "url" => "http://example.com" to "url" => "http://your_server_ip"'
+      order_human ' change --> "url" => "http://example.com" to "url" => "http://your_server_ip" or "url" => "http://your_website.com"'
       order_human 'SAVE ( CTRL + X , then Y , then ENTER)'
       white_divider
 
@@ -191,15 +191,13 @@ while true; do
       order_human 'type -->php artisan migrate'
       white_divider
 
-      white_divider
-      white_divider
+
       white_divider
 
       inform_human 'ALL DONE'
 
       white_divider
-      white_divider
-      white_divider
+
 
       break;;
 

@@ -42,13 +42,17 @@ sudo nano files/default
 ```
 #### in the file "default" locate server_name 0.0.0.0 and replace 0.0.0.0 with your server ip address
 
+5. give the script permision to do its job
+```
+sudo chmod +x deployer.sh
+```
 
-5. run it and watch the magic happen
+6. run it and watch the magic happen
 ```
 ./deployer.sh
 ```
 
-6. sit back and look out for easy guided steps on the screen
+7. sit back and look out for easy guided steps on the screen
 
 
 ## 👨 Developed By
