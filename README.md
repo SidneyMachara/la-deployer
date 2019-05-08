@@ -38,7 +38,7 @@ cd cj-la-deployer
 
 4. update file (default ) with your server ip
 ```
-sudo nano default
+sudo nano files/default
 ```
 #### in the file "default" locate server_name 0.0.0.0 and replace 0.0.0.0 with your server ip address
 

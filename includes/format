@@ -32,7 +32,7 @@ intro() {
 
 inform_human() {
   echo
-  echo_purple $msg
+  echo_purple $1
 }
 
 white_divider() {
@@ -42,9 +42,9 @@ white_divider() {
 }
 
 order_human() {
-  echo_cyan $order
+  echo_cyan $1
 }
 
 warn_human() {
-  echo_red $warining
+  echo_red $1
 }
