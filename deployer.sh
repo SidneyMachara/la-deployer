@@ -1,7 +1,7 @@
 #!/bin/bash
 # set timeout 10
 
-includes/format
+source includes/format
 
 
 

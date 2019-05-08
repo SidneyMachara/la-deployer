@@ -1,10 +1,10 @@
-# la-Deployer 
+# la-Deployer
 
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/)  
 
 Zero-downtime deployment
 
-This is simply a script to help automate deploying a laravel project on a Ubuntu virtual private sever ( VPS ) like Digital Ocean drpolet.
+This is simply a script to help automate deploying a laravel project on a Ubuntu virtual private sever ( VPS ) like Digital Ocean droplet.
 
 Best for beginners looking to depoly as fast as possible without doing much, Or anyone looking to to avoid repeating the boring cycle of basic web server configuration.
 
@@ -21,11 +21,11 @@ la-deployer does the following:
 * guides you on how to setup your laravel project ( uses githook to reduce downtime )
 
 
-## How to Use 
+## How to Use
 
 
-1. ssh into your server 
-  
+1. ssh into your server
+
 2. clone the repo into your server
 ```
 git clone https://github.com/SidneyMachara/cj-la-deployer.git
@@ -40,21 +40,18 @@ cd cj-la-deployer
 ```
 sudo nano default
 ```
-#### in the file "default" locate server_name 0.0.0.0 and repalce 0.0.0.0 with your server ip address 
+#### in the file "default" locate server_name 0.0.0.0 and replace 0.0.0.0 with your server ip address
 
 
 
-5. give the script permision to do its job
-```
-sudo chmod +x deployer.sh
-```
 
-6. run it and watch the magic happen
+
+5. run it and watch the magic happen
 ```
 ./deployer.sh
 ```
 
-7. sit back and look out for easy guided steps on the screan
+6. sit back and look out for easy guided steps on the screan
 
 
 ## 👨 Developed By
@@ -92,4 +89,3 @@ Sidney David  Machara
 
 
 ## Show some :heart: and star the repo to support the project
-
