@@ -32,5 +32,19 @@ intro() {
 
 inform_human() {
   echo
-  echo_purple '$msg'
+  echo_purple $msg
+}
+
+white_divider() {
+  echo
+  echo_white "************************"
+  echo
+}
+
+order_human() {
+  echo_cyan $order
+}
+
+warn_human() {
+  echo_red $warining
 }
