@@ -25,8 +25,8 @@ sudo apt-get -y install mysql-server
 
 inform_human 'INSTALLING mysql_secure_installation'
 echo_white 'What we will do:'
-echo_white 'Re-enter password (No)'
-echo_white 'VALIDATOR ( No)'
+echo_white 'VALIDATE PASSWORD PLUGIN ( No)'
+echo_white 'Change the password for root (No)'
 echo_white 'Remove anonymous users (yes)'
 echo_white 'Disallow root login remotely (yes)'
 echo_white 'Remove test database (yes)'
@@ -41,7 +41,7 @@ sudo apt-add-repository -y ppa:ondrej/php
 sudo apt-get update
 sudo apt-get -y --allow-unauthenticated install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml  zip unzip
 #php7.2-mcrypt <-- deprecated ??
-sudo apt-get -y install php7.1-mcrypt
+sudo apt-get -y --allow-unauthenticated install php7.1-mcrypt
 
 
 
@@ -73,7 +73,7 @@ sudo service nginx restart
 inform_human 'CREATING A Folder for Laravel in (/var/www/laravel)'
 sudo mkdir -p /var/www/laravel
 
-inform_human'NOW WE CREATE SWAPFILE'
+inform_human 'NOW WE CREATE SWAPFILE'
 
 inform_human 'CREATING 1GB SWAP FILE'
 sudo fallocate -l 1G /swapfile
@@ -102,7 +102,7 @@ cd hooks
 
 
 inform_human 'COPYING post-receive file to /var/repo/site.git/hooks/'
-cp ~/la-deployer/files/post-receive /var/repo/site.git/hooks/
+cp ~/cj-la-deployer/files/post-receive /var/repo/site.git/hooks/
 
 
 inform_human 'GIVING post-recive file permissions to excute order to copy files over from git to sever'

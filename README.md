@@ -43,15 +43,12 @@ sudo nano files/default
 #### in the file "default" locate server_name 0.0.0.0 and replace 0.0.0.0 with your server ip address
 
 
-
-
-
 5. run it and watch the magic happen
 ```
 ./deployer.sh
 ```
 
-6. sit back and look out for easy guided steps on the screan
+6. sit back and look out for easy guided steps on the screen
 
 
 ## 👨 Developed By
@@ -84,7 +81,16 @@ Sidney David  Machara
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Getting Started
+<!--
 
+# Stage the script.sh file
+git add script.sh
+# Flag it as executable
+git update-index --chmod=+x script.sh
+# Commit the change
+git commit -m "Make script.sh executable."
+# Push the commit
+git push -->
 
 
 
