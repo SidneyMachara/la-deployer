@@ -1,7 +1,7 @@
 #!/bin/bash
 # set timeout 10
 
-./includes/format
+includes/format
 
 
 
@@ -38,7 +38,7 @@ echo
 echo_purple 'install php-7.2 && most commonly used modules'
 sudo apt-add-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get -y --allow-unauthenticated install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml php7.2-curl curl zip unzip
+sudo apt-get -y --allow-unauthenticated install php7.2 php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-mbstring  php7.2-zip php7.2-fpm php7.2-xml  zip unzip
 #php7.2-mcrypt <-- deprecated ??
 sudo apt-get -y php7.1-mcrypt
 
