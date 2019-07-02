@@ -102,7 +102,7 @@ cd hooks
 
 
 inform_human 'COPYING post-receive file to /var/repo/site.git/hooks/'
-cp ~/cj-la-deployer/files/post-receive /var/repo/site.git/hooks/
+cp ~/la-deployer/files/post-receive /var/repo/site.git/hooks/
 
 
 inform_human 'GIVING post-recive file permissions to excute order to copy files over from git to sever'
